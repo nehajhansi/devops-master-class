@@ -1,5 +1,7 @@
 output "my_s3_bucket_versioning" {
-    value = aws_s3_bucket.my_s3_bucket.versioning[0].enabled
+    value = aws_s3_bucket.my_s3_bucket.versioning[0].enabled 
+    #provider_resource.resource_name.any attributes name is used to get values from the console 
+    #terraform apply -refresh=false(no checking) (and now the output is displayed)
 }
 
 output "my_s3_bucket_complete_details" {
