@@ -1,3 +1,6 @@
+#terraform plan -out iam.tfplan  = storing plan to a file
+#terraform apply "iam.tfplan" = using plan to apply(no comparision againn\, FASTER)
+#terraform apply -target="aws_iam_user.my_iam_user" = ONLY state of that specific user is being updated
 variable "iam_user_name_prefix" {
   type    = string #any, number, bool, list, map, set, object, tuple
   default = "my_iam_user"
