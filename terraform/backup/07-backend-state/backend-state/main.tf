@@ -3,7 +3,7 @@ provider "aws" {
     //version = "~> 2.46"
 }
 
-//S3 bucket
+//S3 bucket #no manual error, locking and isolation, encryption
 resource "aws_s3_bucket" "enterprise_backend_state" {
     bucket = "dev-applications-backend-state-in28minutes-abc"
 
@@ -11,7 +11,7 @@ resource "aws_s3_bucket" "enterprise_backend_state" {
         prevent_destroy = true
     }
 
-    versioning {
+    versioning { #previous state (kinda rollback)
         enabled = true
     }
 
