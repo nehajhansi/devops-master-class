@@ -1,3 +1,4 @@
+#in maps u can associate extra details along with the values (key value pair)
 variable "users" {
   default = {
     ravs : { country : "Netherlands", department : "ABC" },
