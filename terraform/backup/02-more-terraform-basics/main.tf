@@ -12,6 +12,10 @@ provider "aws" {
 }
 
 resource "aws_iam_user" "my_iam_users" {
-  count = 1
+  count = 1 #the no of users you want to create
   name  = "${var.iam_user_name_prefix}_${count.index}"
 }
+#terraform console is used to get the values by indexes
+#terraform fmt = used to format
+#terraform show = provides readable format of state file
+#
