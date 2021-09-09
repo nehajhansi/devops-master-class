@@ -46,7 +46,7 @@ resource "aws_instance" "http_server" {
   vpc_security_group_ids = [aws_security_group.http_server_sg.id]
 
   //subnet_id              = "subnet-3f7b2563"
-  subnet_id = tolist(data.aws_subnet_ids.default_subnets.ids)[0]
+  subnet_id = tolist(data.aws_subnet_ids.default_subnets.ids)[0] #after apply only u can get the values
 
   connection {
     type        = "ssh"
@@ -63,3 +63,5 @@ resource "aws_instance" "http_server" {
     ]
   }
 }
+#whenever u make any changes destroy the previous instance and then apply it just creates the same instance again with changes u have made(hence making terraform immutable)
+#it also understands the dependencies(smart)
