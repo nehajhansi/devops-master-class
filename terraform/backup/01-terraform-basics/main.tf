@@ -15,6 +15,7 @@ resource "aws_s3_bucket" "my_s3_bucket" {
 }
 #state
 #desired(what is that we want)   known(what is previous executed the json content the state file)     actual(what is actually present now after all the executions done in the cloud)
+# KNOWN STATE- IT IS PRESENT IN THE STATE FILE...It contains the mapping from the terraform name of the resource to the aws identifier of the specific resource and when we perform apply the id in the state file is compared.
 #when the terraform apply is applied then it goes to the refreshing state and compares the present execution with the known execution...if there are no changes then it will deploy in secs
 #terraform is declarative i.e it compares the desired state with actual state and makes it equal
 resource "aws_iam_user" "my_iam_user" {
