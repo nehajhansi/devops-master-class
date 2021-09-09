@@ -10,7 +10,7 @@ provider "aws" {
 
 resource "aws_iam_user" "my_iam_users" {
   #count = length(var.names)
-  #name  = var.names[count.index]
-  for_each = toset(var.names)
+  #name  = var.names[count.index] # if u use this then the rest of elements are also affected (here key is position)
+  for_each = toset(var.names) #here only extra element is added instead of changing everything (here key is value)
   name = each.value
 }
