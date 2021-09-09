@@ -62,7 +62,7 @@ resource "aws_elb" "elb" {
   name            = "elb"
   subnets         = data.aws_subnet_ids.default_subnets.ids
   security_groups = [aws_security_group.elb_sg.id]
-  instances       = values(aws_instance.http_servers).*.id
+  instances       = values(aws_instance.http_servers).*.id  #because servers are in the map format so use values to get id for the keys
 
   listener {
     instance_port     = 80
